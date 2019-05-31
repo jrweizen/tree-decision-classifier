@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+
+  datascience-tools-gpu:
+    build:
+      context: .
+      dockerfile: Dockerfile-gpu
+    image: flaviostutz/datascience-tools:2.4.1-gpu
+    ports:
+      - 8888:8888
+      - 6006:6006
+    volumes:
+      - /notebooks:/notebooks
+    environment:
+      - PASSWORD=flaviostutz
